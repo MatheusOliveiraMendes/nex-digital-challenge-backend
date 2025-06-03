@@ -11,7 +11,7 @@ if (process.env.DATABASE_URL) {
     dialectOptions: {
       ssl: {
         require: true,
-        rejectUnauthorized: false, // Necessário para Render
+        rejectUnauthorized: false, 
       },
     },
     logging: false,
