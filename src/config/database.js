@@ -4,17 +4,17 @@ require('dotenv').config();
 let sequelize;
 
 if (process.env.DATABASE_URL) {
-  // Produção (Render)
+  // Produção
   sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres',
     protocol: 'postgres',
     dialectOptions: {
       ssl: {
         require: true,
-        rejectUnauthorized: false, 
+        rejectUnauthorized: false,
       },
     },
-    logging: false,
+    logging: false, 
   });
 } else {
   // Desenvolvimento local
@@ -25,7 +25,7 @@ if (process.env.DATABASE_URL) {
     {
       host: process.env.DB_HOST,
       dialect: 'postgres',
-      logging: false,
+      logging: true,
     }
   );
 }
